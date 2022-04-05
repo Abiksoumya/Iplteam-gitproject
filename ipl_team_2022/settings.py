@@ -77,8 +77,11 @@ WSGI_APPLICATION = 'ipl_team_2022.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'iplteam_db',
+        'USER':'postgres',
+        'PASSWORD':'soumya@95',
+        'HOST':'localhost',
     }
 }
 
@@ -123,6 +126,10 @@ STATICFILES_DIRS=[
     os.path.join (BASE_DIR,'ipl_team_2022/static'),
 ]
 
+# MEDIA DETTINGS
+
+MEDIA_ROOT=os.path.join (BASE_DIR,'media')
+MEDIA_URL='/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
