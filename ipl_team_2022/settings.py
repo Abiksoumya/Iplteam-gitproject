@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'player.apps.PlayerConfig',
+    'MyTeams.apps.MyteamsConfig',
     'IplTeam.apps.IplteamConfig',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>ALL TEAMS</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home'%}">Home</a></li>
+                <li class="active">TEAMS</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+
+<!-- Rent car start -->
+<div class="featured-car content-area">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>ALL <span>TEAMS</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="row">
+            {% for MyTeams in teams%} 
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="car-box">
+                    <div class="car-thumbnail">
+                        <a href="car-details.html" class="car-img">
+                            <div class="tag">* * * *</div>
+                            <img class="d-block w-100" src="{{MyTeams.team_icon.url}}" alt="car" style="min-height: 262px; max-height: 262px;">
+                            <div class="facilities-list clearfix">
+                                <ul>
+                                    <li>
+                                        <span><i class=""></i></span><li>CHAMPION : {{MyTeams.championship_won}}</li>
+                                    </li>
+                                    <li>
+                                        <span><i class="flaticon-calendar-1"></i></span>2020
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </a>
+                        <div class="carbox-overlap-wrapper">
+                            <div class="overlap-box">
+                                <div class="overlap-btns-area">
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <h1 class="title">
+                            <a href="car-details.html">{{MyTeams.team_name}}</a>
+                        </h1>
+                        <div class="location">
+                            <a href="car-details.html">
+                                <i class=""></i>TATA IPL 2022
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer clearfix">
+                        <div class="pull-left ratings days">
+                            <p class="cartype">Total Player</p>
+                        </div>
+                        <div class="pull-right">
+                            <p class="price">{{MyTeams.players_count}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor%}
+            
+            
+            
+        </div>
+    </div>
+</div>
+
+{% endblock  %}
